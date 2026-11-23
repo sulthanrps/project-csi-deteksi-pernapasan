@@ -1,0 +1,8 @@
+skenario,mulai_s,akhir_s,kondisi,gt_bpm,nama_file
+kosong,0,60,kosong,,
+bpm_10,0,60,napas,10,
+bpm_15,0,60,napas,15,
+bpm_20,0,60,napas,20,
+apnea,0,20,napas,15,
+apnea,20,35,tahan_napas,0,
+apnea,35,60,napas,15,
