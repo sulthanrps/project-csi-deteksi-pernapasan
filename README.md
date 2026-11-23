@@ -123,21 +123,3 @@ python kode/analisis_napas.py data/csi/B_sesi2_P1_apnea.csv \
 CSV CSI menyertakan 52 amplitudo, waktu awal simbol L-LTF, RSSI relatif ke skala ADC, CFO, korelasi, durasi burst dan label. Analisis menyamakan grid 10 Hz, filter Hampel, detrending, band-pass 0,08–0,60 Hz dan FFT bagi CSI serta RSSI. Subcarrier dipilih dari rasio daya puncak terhadap daya rata-rata pada 0,10–0,50 Hz. Ground truth digunakan saat menghitung galat. Resolusi alami FFT 30 detik sekitar 2 BPM.
 
 Ekstraksi memakai urutan L-LTF IEEE 802.11 pada persamaan 17-8. [IEEE Std 802.11-2007](https://people.iith.ac.in/tbr/teaching/docs/802.11-2007.pdf)
-
-## 4. Bahan untuk menyusun laporan akhir
-
-| Bahan | Isi yang diperlukan |
-| --- | --- |
-| `data/csi/` | CSV valid untuk ruang kosong, 10 BPM, 15 BPM, 20 BPM dan apnea. Sertakan pengulangan yang tersedia dan beri konteks untuk sesi gagal di log. |
-| `data/log_sesi.csv` | Satu baris per rekaman. Catat ground truth terukur untuk tiga ritme jika tersedia, atau tandai bahwa metronom menjadi acuan. Catat jam, kanal, gain, kode subjek, jarak dan gangguan. |
-| `data/jadwal_protokol.csv` | Jadwal dan waktu aktual apnea per sesi jika menyimpang dari jadwal bawaan. |
-| Bukti baseline | Grafik envelope/clipping, jumlah paket target dengan `rho > 0.6`, laju paket, plot amplitudo subcarrier, median koefisien variasi, serta rentang filter pemancar yang dipakai. |
-| Denah aktual | Jarak TX–RX, tinggi antena, jarak kursi ke LOS, orientasi subjek, posisi perangkat, dan kondisi ruangan. Sketsa berukuran sudah cukup. |
-
-Dari bahan ini, laporan dapat memuat spektrum FFT dan time-series kelima skenario, tabel estimasi dan MAE CSI dibanding RSSI untuk 10/15/20 BPM, STFT apnea dengan penanda interval aktual, eksplorasi penjarangan paket, dan analisis sesi yang meleset berdasarkan gap paket serta kondisi ruangan. Folder `hasil/` boleh ikut diberikan jika analisis sudah dijalankan. Contoh CS8 tetap berguna untuk arsip dan ekstraksi ulang.
-
-- [Proposal](proposal.pdf) memuat hipotesis, denah, metode dan target pengukuran.
-- [Laporan](laporan.pdf) menyediakan kerangka pengisian hasil, pembahasan kegagalan dan evaluasi.
-- [Slide](slide.pdf) memuat alur presentasi dan demo lima menit.
-
-Isi log dan dokumen hasil setelah pengukuran. Data eksperimen dan umpan balik pitch belum tersedia di proyek ini.
